@@ -17,5 +17,6 @@ public class Test {
 
         Person person = new Person(firstName, lastName, age, pesel);
         System.out.println(person.toString());
+
     }
 }
