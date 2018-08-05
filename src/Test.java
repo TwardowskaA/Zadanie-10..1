@@ -15,7 +15,14 @@ public class Test {
         String pesel = scan.nextLine();
 
 
-        Person person = new Person(firstName, lastName, age, pesel);
+        Person person = null;
+        try {
+            person = new Person(firstName, lastName, age, pesel);
+        } catch (NameUndefinedException e) {
+            e.printStackTrace();
+        } catch (IncorrectAgeException e) {
+            e.printStackTrace();
+        }
         System.out.println(person.toString());
 
     }

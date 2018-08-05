@@ -5,19 +5,11 @@ public class Person {
     private int age;
     private String pesel;
 
-    public Person(String firstName, String lastName, int age, String pesel) {
+    public Person(String firstName, String lastName, int age, String pesel) throws NameUndefinedException, IncorrectAgeException {
         if(firstName == null || lastName == null || firstName.length() < 2 || lastName.length() < 2)
-            try {
-                throw new NameUndefinedException("Imie i nazwisko nie może być nullem i mieć mniej niż 2 znaki");
-            } catch (NameUndefinedException e) {
-                e.printStackTrace();
-            }
+            throw new NameUndefinedException("Imie i nazwisko nie może być nullem i mieć mniej niż 2 znaki");
         if( age < 1)
-            try {
-                throw new IncorrectAgeException("Wiek nie moze byc mniejszy niz 1");
-            } catch (IncorrectAgeException e) {
-                e.printStackTrace();
-            }
+            throw new IncorrectAgeException("Wiek nie moze byc mniejszy niz 1");
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
